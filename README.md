@@ -1,6 +1,6 @@
 # Vue-Toast-Plugin
 
-A simple toast plugin for Vue.js.
+A toast plugin for Vue.js.
 
 ## Features
 
@@ -10,7 +10,7 @@ A simple toast plugin for Vue.js.
 ## Installation
 
 ```Bash
-npm i vue-toast-plugin
+npm i vue-toast
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ index.js
 
 ```javascript
 import Vue from 'vue'
-import Toast from 'vue-toast-plugin'
+import Toast from 'vue-toast'
 
 Vue.use(Toast)
 ```
@@ -31,20 +31,20 @@ App.vue
 ```javascript
 export default {
   methods: {
-    success () {
-      this.$toast(this.$refs.success, 'Wonderful!', 'success')
+    defaultt () {
+        this.Toast('hello,lyseky!', 'default','middle', '3000')
     },
-
-    warning () {
-      this.$toast(this.$refs.warning, 'Attention!', 'warning', 3000)
-    },
-
     info () {
-      this.$toast(this.$refs.info, 'Information!', 'info', 1000, 100)
+        this.Toast('hello,lyseky!', 'info','middle', '3000')
     },
-
+    success () {
+        this.Toast('hello,lyseky!', 'success','middle', '3000')
+    },
+    warning () {
+        this.Toast('hello,lyseky!', 'warning','middle', '3000')
+    },
     error () {
-      this.$toast(this.$refs.error, 'Oops!', 'error', 2000, 500, 600)
+        this.Toast('hello,lyseky!', 'error','middle', '3000')
     }
   }
 }
@@ -54,9 +54,7 @@ export default {
 
 |Option|Description|Value|Default|
 |---|---|---|---|
-|el|target element|||
 |text|content of the toast|||
-|type|type of the toast|'' 'success' 'warning' 'info' 'error'||
+|type|type of the toast|'default' 'success' 'warning' 'info' 'error'||
+|position|position of the toast| 'middle' 'top' 'bottom'||
 |duration|time before the toast vanishes, in millisecond||4000
-|top|the distance between the top of the body and the toast element, in px||right of the target element
-|left|the distance between the left of the body and the toast element, in px||bottom of the target element
