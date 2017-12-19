@@ -1,6 +1,6 @@
 {
   "name": "vue-toast",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "A toast plugin for Vue.js.",
   "main": "Toast.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/lyseky/vue-toast.git"
   },
-  "author": "",
+  "author": "lyseky",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lyseky/vue-toast/issues"
