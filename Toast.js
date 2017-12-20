@@ -11,7 +11,16 @@ import './Toast.css'
  * @param {number} duration  time before the toast vanishes, in millisecond
  * @param {number} position
  */
-function toast (text, type, position, duration) {
+function toast (obj) {
+    // 如果toast还在，则不再执行
+    if(document.getElementsByClassName('vue-toast').length){
+        return
+    }
+
+    const text        = obj.text;
+    const type        = obj.type || "default";
+    const position    = obj.position || "middle";
+    const duration    = obj.duration || "2000";
 
     if (text && typeof text !== 'string') {
         throw new Error('toast content is not string.')
@@ -25,21 +34,18 @@ function toast (text, type, position, duration) {
         throw new Error('toast position should be one of "top, middle, bottom".')
     }
 
-    duration = duration || 3000
     if (isNaN(Number(duration))) {
         throw new Error('toast duration should be number.')
     }
 
-    var toastEl = document.createElement('div')
-
-    toastEl.innerHTML = text
-
-    toastEl.className = 'vue-toast ' + type +' '+ position
-    // 如果toast还在，则不再执行
-    if(document.getElementsByClassName('vue-toast').length){
-        return
-    }
+    const toastEl = document.createElement('div')
+    toastEl.className = 'toast-container'
     document.body.appendChild(toastEl)
+
+    const toastInner = document.createElement('div')
+    toastInner.innerHTML = text
+    toastInner.className = 'vue-toast ' + type +' '+ position
+    document.querySelector('.toast-container').appendChild(toastInner)
 
     setTimeout(function () {
         toastEl.className += ' hide'
