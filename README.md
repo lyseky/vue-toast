@@ -30,23 +30,48 @@ App.vue
 
 ```javascript
 export default {
-  methods: {
-    defaultt () {
-        this.Toast('hello,lyseky!', 'default','middle', '3000')
-    },
-    info () {
-        this.Toast('hello,lyseky!', 'info','middle', '3000')
-    },
-    success () {
-        this.Toast('hello,lyseky!', 'success','middle', '3000')
-    },
-    warning () {
-        this.Toast('hello,lyseky!', 'warning','middle', '3000')
-    },
-    error () {
-        this.Toast('hello,lyseky!', 'error','middle', '3000')
-    }
-  }
+  methods:{
+            defaultt () {
+                this.Toast({
+                    text:'hello,lyseky!',
+                    type:'default',
+                    position:'top',
+                    duration:'2000'
+                })
+            },
+            info () {
+                this.Toast({
+                    text:'hello,lyseky!',
+                    type:'info',
+                    position:'bottom',
+                    duration:'2000'
+                })
+            },
+            success () {
+                this.Toast({
+                    text:'hello,lyseky!',
+                    type:'success',
+                    position:'middle',
+                    duration:'2000'
+                })
+            },
+            warning () {
+                this.Toast({
+                    text:'hello,lyseky!',
+                    type:'warning',
+                    position:'middle',
+                    duration:'2000'
+                })
+            },
+            error () {
+                this.Toast({
+                    text:'hello,lyseky!',
+                    type:'error',
+                    position:'middle',
+                    duration:'2000'
+                })
+            }
+        }
 }
 ```
 
